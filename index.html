@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>AI Sales Insights Dashboard</h2>
+
+<button onclick="load()">Generate Insights</button>
+
+<pre id="out"></pre>
+
+<script>
+async function load(){
+ let res = await fetch("/insights");
+ let data = await res.json();
+ document.getElementById("out").innerText=data.insights;
+}
+</script>
+
+</body>
+</html>
